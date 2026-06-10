@@ -45,7 +45,7 @@ export default async function Post({
         <Link href="/writing" className="nav-home">← Writing</Link>
         <Link href="/about">About</Link>
         <Link href="/work">Work</Link>
-        <a href="mailto:hello@hardikmore.com">Contact</a>
+        <a href="/#elsewhere">Contact</a>
       </nav>
 
       <section className="identity">

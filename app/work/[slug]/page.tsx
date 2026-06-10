@@ -45,7 +45,7 @@ export default async function CaseStudy({
         <Link href="/work" className="nav-home">← Work</Link>
         <Link href="/about">About</Link>
         <Link href="/writing">Writing</Link>
-        <a href="mailto:hello@hardikmore.com">Contact</a>
+        <a href="/#elsewhere">Contact</a>
       </nav>
 
       <section className="identity">

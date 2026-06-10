@@ -22,7 +22,7 @@ export default function About() {
         <Link href="/about" aria-current="page">About</Link>
         <Link href="/work">Work</Link>
         <Link href="/writing">Writing</Link>
-        <a href="mailto:hello@hardikmore.com">Contact</a>
+        <a href="/#elsewhere">Contact</a>
       </nav>
 
       <section className="identity">

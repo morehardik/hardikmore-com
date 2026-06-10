@@ -24,10 +24,10 @@ export default async function Home() {
   return (
     <main>
       <nav className="site-nav">
-        <Link href="/about.html">About</Link>
+        <Link href="/about">About</Link>
         <Link href="/work">Work</Link>
         <Link href="/writing">Writing</Link>
-        <a href="mailto:hello@hardikmore.com">Contact</a>
+        <a href="#elsewhere">Contact</a>
       </nav>
 
       <section className="identity">
@@ -142,7 +142,7 @@ export default async function Home() {
         </table>
       </section>
 
-      <section className="section">
+      <section className="section" id="elsewhere">
         <h2>Elsewhere</h2>
         <ul className="inline-list">
           <li><a href="https://twitter.com/hardik__more" target="_blank" rel="noopener">Twitter</a></li>

@@ -25,7 +25,7 @@ export default async function Work() {
         <Link href="/about">About</Link>
         <Link href="/work" aria-current="page">Work</Link>
         <Link href="/writing">Writing</Link>
-        <a href="mailto:hello@hardikmore.com">Contact</a>
+        <a href="/#elsewhere">Contact</a>
       </nav>
 
       <section className="identity">
