@@ -5,18 +5,20 @@ import { getContentList } from "@/lib/markdown";
 export const metadata: Metadata = {
   title: "Writing",
   description:
-    "Writing by Hardik More on developer infrastructure, agentic AI, consumer products, and building in India. Posts on Substack with canonical here.",
+    "Writing by Hardik More on developer infrastructure, agentic AI, consumer products, and building in India.",
   openGraph: {
-    title: "Writing — Hardik More",
+    title: "Writing - Hardik More",
     description: "On developer infrastructure, agentic AI, consumer products, and building in India.",
     url: "https://hardikmore.com/writing",
-    images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve — building in the tails" }],
+    images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve" }],
   },
   alternates: { canonical: "https://hardikmore.com/writing" },
 };
 
 export default async function Writing() {
   const posts = await getContentList("writing");
+  const essays = posts.filter((p) => !p.tag || p.tag === "essay");
+  const notes = posts.filter((p) => p.tag === "note");
 
   return (
     <main>
@@ -25,6 +27,7 @@ export default async function Writing() {
         <Link href="/about">About</Link>
         <Link href="/work">Work</Link>
         <Link href="/writing" aria-current="page">Writing</Link>
+        <Link href="/now">Now</Link>
         <a href="/#elsewhere">Contact</a>
       </nav>
 
@@ -34,27 +37,54 @@ export default async function Writing() {
       </section>
 
       <section className="section">
-        <h2>Posts</h2>
+        <h2>Essays</h2>
         <ul>
-          {posts.length > 0 ? (
-            posts.map((post) => (
+          {essays.length > 0 ? (
+            essays.map((post) => (
               <li key={post.slug}>
-                <Link href={`/writing/${post.slug}`}>{post.title}</Link>
-                <span className="meta"><time dateTime={post.date}>{post.date}</time></span>
+                {post.externalUrl ? (
+                  <a href={post.externalUrl} target="_blank" rel="noopener">{post.title}</a>
+                ) : (
+                  <Link href={`/writing/${post.slug}`}>{post.title}</Link>
+                )}
+                <span className="meta">
+                  <time dateTime={post.date}>{post.dateDisplay}</time>
+                </span>
               </li>
             ))
           ) : (
-            <li>
-              <a href="https://hardikmore.substack.com/p/dev-tech-in-india" target="_blank" rel="noopener">Dev tech in India</a>
-              <span className="meta"><time dateTime="2023-08">Aug 2023</time></span>
-            </li>
+            <>
+              <li>
+                <a href="https://hardikmore.substack.com/p/m1-coffee-philosophy-india" target="_blank" rel="noopener">Coffee last sunday..</a>
+                <span className="meta"><time dateTime="2024-02-11">Feb 11, 2024</time></span>
+              </li>
+              <li>
+                <a href="https://hardikmore.substack.com/p/dev-tech-in-india" target="_blank" rel="noopener">Dev tech in India</a>
+                <span className="meta"><time dateTime="2023-08">Aug 2023</time></span>
+              </li>
+            </>
           )}
         </ul>
         <p className="sub-note">
-          Subscribe via <a href="https://hardikmore.substack.com" target="_blank" rel="noopener">Substack</a> for email delivery.
-          New posts appear here first.
+          More via <a href="https://hardikmore.substack.com" target="_blank" rel="noopener">Substack</a>.
         </p>
       </section>
+
+      {notes.length > 0 && (
+        <section className="section">
+          <h2>Notes</h2>
+          <ul>
+            {notes.map((note) => (
+              <li key={note.slug}>
+                <Link href={`/writing/${note.slug}`}>{note.title}</Link>
+                <span className="meta">
+                  <time dateTime={note.date}>{note.dateDisplay}</time>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </main>
   );
 }

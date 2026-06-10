@@ -24,6 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: "https://hardikmore.com/about", changeFrequency: "monthly", priority: 0.9 },
     { url: "https://hardikmore.com/work", changeFrequency: "monthly", priority: 0.9 },
     { url: "https://hardikmore.com/writing", changeFrequency: "weekly", priority: 0.9 },
+    { url: "https://hardikmore.com/now", changeFrequency: "monthly", priority: 0.8 },
     ...workUrls,
     ...writingUrls,
   ];

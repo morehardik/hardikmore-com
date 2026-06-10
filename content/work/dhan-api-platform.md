@@ -1,5 +1,5 @@
 ---
-title: DhanHQ APIs — developer platform
+title: "DhanHQ APIs: developer platform"
 date: 2024-01
 tag: developer
 description: Built India's largest broking developer ecosystem from zero to Rs 10Cr ARR.

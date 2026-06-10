@@ -4,15 +4,15 @@ import Link from "next/link";
 import { getContentList } from "@/lib/markdown";
 
 export const metadata: Metadata = {
-  title: "Hardik More — Product Operator, Developer & Consumer Products",
+  title: "Hardik More - building in the tails.",
   description:
-    "Hardik More is a product operator building on new infrastructure — developer APIs, agentic AI, and consumer products at scale. Currently at Dhan.",
+    "Hardik More builds on new infrastructure before the category has a name. Developer APIs, agentic AI, consumer products at scale. Currently at Dhan.",
   openGraph: {
-    title: "Hardik More — Product Operator",
+    title: "Hardik More - building in the tails.",
     description:
       "Building on new infrastructure before the category has a name. Developer APIs, agentic AI, consumer products. Currently at Dhan.",
     url: "https://hardikmore.com",
-    images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve — building in the tails" }],
+    images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve - building in the tails" }],
   },
   alternates: { canonical: "https://hardikmore.com" },
 };
@@ -27,6 +27,7 @@ export default async function Home() {
         <Link href="/about">About</Link>
         <Link href="/work">Work</Link>
         <Link href="/writing">Writing</Link>
+        <Link href="/now">Now</Link>
         <a href="#elsewhere">Contact</a>
       </nav>
 
@@ -38,7 +39,7 @@ export default async function Home() {
       <figure className="hero">
         <Image
           src="/images/tails.webp"
-          alt="A long-tail probability distribution curve — building in the tails"
+          alt="A long-tail probability distribution curve - building in the tails"
           width={1200}
           height={480}
           priority
@@ -47,7 +48,7 @@ export default async function Home() {
 
       <section className="intro">
         <p>
-          I turn new infrastructure into revenue lines —
+          I turn new infrastructure into revenue lines:
           developer APIs, agentic AI, consumer products at scale.
         </p>
         <p>
@@ -72,7 +73,7 @@ export default async function Home() {
           ) : (
             <>
               <li>
-                <a href="https://portfolio.hardikmore.com/simpl-product-teardown" target="_blank" rel="noopener">Simpl — activation teardown</a>
+                <a href="https://portfolio.hardikmore.com/simpl-product-teardown" target="_blank" rel="noopener">Simpl - activation teardown</a>
                 <span className="meta">consumer</span>
               </li>
               <li>
@@ -93,13 +94,17 @@ export default async function Home() {
       </section>
 
       <section className="section" id="writing">
-        <h2>Writing</h2>
+        <h2>Essays</h2>
         <ul>
-          {writings.length > 0 ? (
-            writings.map((item) => (
+          {writings.filter((w) => !w.tag || w.tag === "essay").length > 0 ? (
+            writings.filter((w) => !w.tag || w.tag === "essay").map((item) => (
               <li key={item.slug}>
-                <Link href={`/writing/${item.slug}`}>{item.title}</Link>
-                <span className="meta">{item.date}</span>
+                {item.externalUrl ? (
+                  <a href={item.externalUrl} target="_blank" rel="noopener">{item.title}</a>
+                ) : (
+                  <Link href={`/writing/${item.slug}`}>{item.title}</Link>
+                )}
+                <span className="meta">{item.dateDisplay}</span>
               </li>
             ))
           ) : (
@@ -113,6 +118,20 @@ export default async function Home() {
           More via <a href="https://hardikmore.substack.com" target="_blank" rel="noopener">Substack</a>.
         </p>
       </section>
+
+      {writings.filter((w) => w.tag === "note").length > 0 && (
+        <section className="section" id="notes">
+          <h2>Notes</h2>
+          <ul>
+            {writings.filter((w) => w.tag === "note").map((item) => (
+              <li key={item.slug}>
+                <Link href={`/writing/${item.slug}`}>{item.title}</Link>
+                <span className="meta">{item.dateDisplay}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="section" id="experience">
         <h2>Experience</h2>

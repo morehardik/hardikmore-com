@@ -4,11 +4,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Hardik More — Product Operator",
-    template: "%s — Hardik More",
+    default: "Hardik More - building in the tails.",
+    template: "%s / Hardik More",
   },
   description:
-    "Hardik More is a product operator building on new infrastructure — developer APIs, agentic AI, and consumer products at scale. Currently at Dhan.",
+    "Hardik More builds on new infrastructure before the category has a name. Developer APIs, agentic AI, consumer products at scale. Currently at Dhan.",
   authors: [{ name: "Hardik More" }],
   metadataBase: new URL("https://hardikmore.com"),
   openGraph: {

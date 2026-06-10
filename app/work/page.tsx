@@ -5,12 +5,12 @@ import { getContentList } from "@/lib/markdown";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Product work by Hardik More — developer APIs, agentic AI, consumer products. Case studies across DhanHQ, ScanX, MCP infrastructure, and early-stage investing.",
+    "Product work by Hardik More - developer APIs, agentic AI, consumer products. Case studies across DhanHQ, ScanX, MCP infrastructure, and early-stage investing.",
   openGraph: {
-    title: "Work — Hardik More",
+    title: "Work - Hardik More",
     description: "Developer APIs, agentic AI, consumer products. Case studies from Dhan and earlier.",
     url: "https://hardikmore.com/work",
-    images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve — building in the tails" }],
+    images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve - building in the tails" }],
   },
   alternates: { canonical: "https://hardikmore.com/work" },
 };
@@ -25,6 +25,7 @@ export default async function Work() {
         <Link href="/about">About</Link>
         <Link href="/work" aria-current="page">Work</Link>
         <Link href="/writing">Writing</Link>
+        <Link href="/now">Now</Link>
         <a href="/#elsewhere">Contact</a>
       </nav>
 
@@ -34,7 +35,7 @@ export default async function Work() {
       </section>
 
       <section className="section">
-        <h2>Dhan — 2022 to present</h2>
+        <h2>Dhan - 2022 to present</h2>
         <ul>
           {caseStudies.length > 0 ? (
             caseStudies.map((item) => (
@@ -46,15 +47,15 @@ export default async function Work() {
           ) : (
             <>
               <li>
-                <span>DhanHQ APIs — developer platform</span>
+                <span>DhanHQ APIs - developer platform</span>
                 <span className="meta">developer</span>
               </li>
               <li>
-                <span>Charts + trading platform — one-third of Dhan&apos;s revenue</span>
+                <span>Charts + trading platform - one-third of Dhan&apos;s revenue</span>
                 <span className="meta">consumer</span>
               </li>
               <li>
-                <span>ScanX — equity research at scale</span>
+                <span>ScanX - equity research at scale</span>
                 <span className="meta">consumer</span>
               </li>
               <li>
@@ -62,11 +63,11 @@ export default async function Work() {
                 <span className="meta">agentic</span>
               </li>
               <li>
-                <span>Broking-as-a-Service — 100+ partnerships</span>
+                <span>Broking-as-a-Service - 100+ partnerships</span>
                 <span className="meta">developer</span>
               </li>
               <li>
-                <span>Strategic investments — sourced and co-built early-stage bets</span>
+                <span>Strategic investments - sourced and co-built early-stage bets</span>
                 <span className="meta">investing</span>
               </li>
             </>
@@ -81,7 +82,7 @@ export default async function Work() {
         <h2>Earlier</h2>
         <ul>
           <li>
-            <a href="https://portfolio.hardikmore.com/simpl-product-teardown" target="_blank" rel="noopener">Simpl — activation teardown</a>
+            <a href="https://portfolio.hardikmore.com/simpl-product-teardown" target="_blank" rel="noopener">Simpl - activation teardown</a>
             <span className="meta">consumer</span>
           </li>
           <li>

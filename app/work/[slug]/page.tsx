@@ -20,7 +20,7 @@ export async function generateMetadata({
     title: page.title,
     description: page.description,
     openGraph: {
-      title: `${page.title} — Hardik More`,
+      title: `${page.title} / Hardik More`,
       description: page.description,
       url: `https://hardikmore.com/work/${slug}`,
       type: "article",
@@ -45,6 +45,7 @@ export default async function CaseStudy({
         <Link href="/work" className="nav-home">← Work</Link>
         <Link href="/about">About</Link>
         <Link href="/writing">Writing</Link>
+        <Link href="/now">Now</Link>
         <a href="/#elsewhere">Contact</a>
       </nav>
 
