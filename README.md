@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# hardikmore.com
 
-## Getting Started
+Personal site of Hardik More — product operator, currently Senior PM at Dhan.
 
-First, run the development server:
+Live at [hardikmore.com](https://hardikmore.com).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Why this exists
+
+Four web presences (hardikmore.com, portfolio, blog, musings subdomains) had accumulated over the years — each built at a different time, none talking to each other. This repo consolidates everything into one minimal, text-first site.
+
+The goal wasn't a portfolio. It was a signal: operator who turns new infrastructure into revenue, not just a PM with case studies.
+
+## Design decisions
+
+**No framework UI, no Tailwind.** Single global stylesheet (`app/globals.css`) with a handful of CSS custom properties. Typography does the work. The constraint forces clarity.
+
+**Warm off-white, near-black, monospace meta.** Inspired by [nadh.in](https://nadh.in), [manassaloi.com](https://manassaloi.com), [noahzender.com](https://noahzender.com) — sites where restraint is the personality. No cards, no shadows, no gradients.
+
+**Hero image.** A long-tail probability distribution curve — "building in the tails." Original concept, AI-generated. The tagline is the thesis: working on things that look small until they aren't.
+
+**Markdown content pipeline.** Case studies and posts live as `.md` files in `/content`. No CMS, no database. Gray-matter parses frontmatter, remark renders to HTML. Adding a case study is creating a file.
+
+**Max-width 680px.** Readable line length on every device. Centered on large screens, padded on mobile. Nothing touches the edges.
+
+## Stack
+
+- Next.js 14 App Router
+- Custom CSS (no Tailwind)
+- gray-matter + remark for markdown
+- Vercel (deploy)
+- Google Analytics G-8VDTTGDYQZ
+
+## Structure
+
+```
+app/
+  page.tsx              — home
+  about/page.tsx        — about
+  work/page.tsx         — work index
+  work/[slug]/page.tsx  — case study
+  writing/page.tsx      — writing index
+  writing/[slug]/page.tsx — post
+  globals.css           — entire design system
+  sitemap.ts            — auto /sitemap.xml
+  robots.ts             — auto /robots.txt
+
+content/
+  work/                 — case study markdown files
+  writing/              — post markdown files
+
+public/
+  images/tails.webp     — hero image
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Opens at `http://localhost:3000`. Use `--port 8000` if needed.
 
-## Learn More
+## Content
 
-To learn more about Next.js, take a look at the following resources:
+Adding a case study or post — create a `.md` file in `content/work/` or `content/writing/` with this frontmatter:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```yaml
+---
+title: Title here
+date: 2024-06
+tag: developer | consumer | agentic | b2b | investing | essay
+description: One or two sentence summary.
+---
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The index pages and slug routes pick it up automatically on next build.
