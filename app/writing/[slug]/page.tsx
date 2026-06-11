@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getContentPage, getContentList } from "@/lib/markdown";
 import PostFooter from "@/app/components/PostFooter";
+import ReadingProgress from "@/app/components/ReadingProgress";
 
 export async function generateStaticParams() {
   const items = await getContentList("writing");
@@ -59,6 +60,8 @@ export default async function Post({
           {page.tag ? ` · ${page.tag}` : ""}
         </p>
       </section>
+
+      <ReadingProgress />
 
       <div
         className="prose"

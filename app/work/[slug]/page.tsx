@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getContentPage, getContentList } from "@/lib/markdown";
+import ReadingProgress from "@/app/components/ReadingProgress";
 
 export async function generateStaticParams() {
   const items = await getContentList("work");
@@ -55,6 +56,8 @@ export default async function CaseStudy({
       </section>
 
       <p className="post-meta">{page.date}</p>
+
+      <ReadingProgress />
 
       <div
         className="prose"

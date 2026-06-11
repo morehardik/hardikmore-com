@@ -59,7 +59,7 @@ export default async function Writing() {
                 <span className="meta"><time dateTime="2024-02-11">Feb 11, 2024</time></span>
               </li>
               <li>
-                <a href="https://hardikmore.substack.com/p/dev-tech-in-india" target="_blank" rel="noopener">Dev tech in India</a>
+                <a href="https://hardikmore.substack.com/p/dev-tools-ecosystem" target="_blank" rel="noopener">Dev tech in India</a>
                 <span className="meta"><time dateTime="2023-08">Aug 2023</time></span>
               </li>
             </>

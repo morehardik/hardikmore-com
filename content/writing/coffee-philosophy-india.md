@@ -20,7 +20,7 @@ _Before we begin…_
 
 ![Coffee Philosophy India | Musings by Hardik More](/images/writing/coffee-philosophy-india/cover.webp)
 
-*DALL-E: Encapsulate the essence of Indian coffee culture, blending traditional elements with the modern coffee chain concept.*
+*India's coffee culture -- traditional roots, modern chains.*
 
 Indians are becoming affluent, something that has been talked about in multiple reports (you can give it a read [here](https://finshots.in/archive/the-rise-of-indias-affluent-class/#:~:text=Goldman%20Sachs'%20central%20idea%20is,\(~%E2%82%B98%20lakhs\)%20annually.)). And aspirational Indians are now pouring in money and changing lifestyle rapidly, and so is changing their "wants".
 

@@ -109,7 +109,7 @@ export default async function Home() {
             ))
           ) : (
             <li>
-              <a href="https://hardikmore.substack.com/p/dev-tech-in-india" target="_blank" rel="noopener">Dev tech in India</a>
+              <a href="https://hardikmore.substack.com/p/dev-tools-ecosystem" target="_blank" rel="noopener">Dev tech in India</a>
               <span className="meta">Aug 2023</span>
             </li>
           )}

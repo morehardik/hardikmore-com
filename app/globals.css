@@ -337,26 +337,24 @@ main {
   margin: 32px 0 8px;
 }
 
-/* Image captions: italic immediately after img */
+/* Inline em — italic everywhere by default */
 .prose em {
-  font-style: normal;
-  font-size: 13px;
-  color: var(--muted);
-  font-family: var(--font-mono);
-  display: block;
-  margin-bottom: 24px;
+  font-style: italic;
 }
 
-/* Inline em inside paragraphs should stay italic */
-.prose p em,
-.prose li em,
-.prose blockquote em {
-  font-style: italic;
-  font-size: inherit;
-  color: inherit;
-  font-family: inherit;
-  display: inline;
-  margin-bottom: 0;
+/* Caption: only a <p><em> that immediately follows a <p><img> */
+.prose p:has(> img) + p:has(> em:only-child) {
+  font-size: 13px;
+  color: var(--muted);
+  font-family: var(--font-body);
+  text-align: center;
+  margin-top: -12px;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.prose p:has(> img) + p:has(> em:only-child) em {
+  font-style: normal;
 }
 
 .prose blockquote {
@@ -381,6 +379,15 @@ main {
 }
 
 .prose h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 56px 0 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.prose h2.label {
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
@@ -398,6 +405,7 @@ main {
   letter-spacing: -0.01em;
   line-height: 1.3;
 }
+
 
 /* Horizontal rule: section divider only, subtle */
 .prose hr {
@@ -492,6 +500,38 @@ main {
 .post-footer-nav a:hover {
   color: var(--text);
   opacity: 1;
+}
+
+/* ── Reading progress (desktop only) ──────────────── */
+.reading-progress {
+  display: none;
+}
+
+@media (min-width: 1080px) {
+  .reading-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .reading-progress-bar {
+    width: 3px;
+    height: 20px;
+    background: var(--border);
+    border-radius: 2px;
+    transition: background 0.25s ease, height 0.25s ease;
+    cursor: default;
+  }
+
+  .reading-progress-bar.active {
+    background: var(--text);
+    height: 28px;
+  }
 }
 
 /* ── Mobile ────────────────────────────────────────── */
