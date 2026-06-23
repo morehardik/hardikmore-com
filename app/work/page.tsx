@@ -37,8 +37,8 @@ export default async function Work() {
       <section className="section">
         <h2>Dhan - 2022 to present</h2>
         <ul>
-          {caseStudies.length > 0 ? (
-            caseStudies.map((item) => (
+          {caseStudies.filter((i) => i.slug !== "simpl-product-teardown").length > 0 ? (
+            caseStudies.filter((i) => i.slug !== "simpl-product-teardown").map((item) => (
               <li key={item.slug}>
                 <Link href={`/work/${item.slug}`}>{item.title}</Link>
                 <span className="meta">{item.tag}</span>
@@ -81,10 +81,17 @@ export default async function Work() {
       <section className="section">
         <h2>Earlier</h2>
         <ul>
-          <li>
-            <a href="https://portfolio.hardikmore.com/simpl-product-teardown" target="_blank" rel="noopener">Simpl - activation teardown</a>
-            <span className="meta">consumer</span>
-          </li>
+          {caseStudies.find((i) => i.slug === "simpl-product-teardown") ? (
+            <li>
+              <Link href="/work/simpl-product-teardown">Simpl -- Product Teardown</Link>
+              <span className="meta">consumer</span>
+            </li>
+          ) : (
+            <li>
+              <a href="https://portfolio.hardikmore.com/simpl-product-teardown" target="_blank" rel="noopener">Simpl - activation teardown</a>
+              <span className="meta">consumer</span>
+            </li>
+          )}
           <li>
             <a href="https://portfolio.hardikmore.com/wealth-tech-robo-advisory-app-concept" target="_blank" rel="noopener">WealthTech savings app</a>
             <span className="meta">consumer</span>

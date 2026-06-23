@@ -63,8 +63,8 @@ export default async function Home() {
       <section className="section" id="work">
         <h2>Work</h2>
         <ul>
-          {works.length > 0 ? (
-            works.map((item) => (
+          {works.filter((i) => i.slug !== "simpl-product-teardown").length > 0 ? (
+            works.filter((i) => i.slug !== "simpl-product-teardown").map((item) => (
               <li key={item.slug}>
                 <Link href={`/work/${item.slug}`}>{item.title}</Link>
                 <span className="meta">{item.tag}</span>

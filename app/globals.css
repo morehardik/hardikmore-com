@@ -459,6 +459,79 @@ main {
   font-weight: 600;
 }
 
+/* ── Prose tables ──────────────────────────────────── */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0 32px;
+  font-size: 15px;
+}
+
+.prose thead th {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  padding: 0 24px 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.prose thead th:last-child {
+  padding-right: 0;
+  text-align: right;
+}
+
+.prose tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.prose tbody td {
+  padding: 10px 24px 10px 0;
+  vertical-align: top;
+  line-height: 1.6;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.prose tbody td:last-child {
+  padding-right: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── Tags (reusable: short / medium / long) ─────────── */
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 2px;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.tag-short {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.tag-medium {
+  border: 1px solid var(--text);
+  color: var(--text);
+}
+
+.tag-long {
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
 .post-meta {
   font-family: var(--font-mono);
   font-size: 12px;

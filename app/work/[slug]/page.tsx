@@ -52,10 +52,11 @@ export default async function CaseStudy({
 
       <section className="identity">
         <h1 className="identity-name">{page.title}</h1>
-        <p className="identity-tag">{page.tag}</p>
+        <p className="identity-tag post-meta">
+          <time dateTime={page.date}>{page.dateDisplayFull}</time>
+          {page.tag ? ` · ${page.tag}` : ""}
+        </p>
       </section>
-
-      <p className="post-meta">{page.date}</p>
 
       <ReadingProgress />
 
