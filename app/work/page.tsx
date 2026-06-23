@@ -83,25 +83,25 @@ export default async function Work() {
         <ul>
           {caseStudies.find((i) => i.slug === "simpl-product-teardown") ? (
             <li>
-              <Link href="/work/simpl-product-teardown">Simpl -- Product Teardown</Link>
+              <Link href="/work/simpl-product-teardown">Simpl: Product Teardown</Link>
               <span className="meta">consumer</span>
             </li>
           ) : (
             <li>
-              <a href="https://portfolio.hardikmore.com/simpl-product-teardown" target="_blank" rel="noopener">Simpl - activation teardown</a>
+              <span>Simpl - activation teardown</span>
               <span className="meta">consumer</span>
             </li>
           )}
           <li>
-            <a href="https://portfolio.hardikmore.com/wealth-tech-robo-advisory-app-concept" target="_blank" rel="noopener">WealthTech savings app</a>
+            <span>WealthTech savings app</span>
             <span className="meta">consumer</span>
           </li>
           <li>
-            <a href="https://portfolio.hardikmore.com/card-payment-flow--crypto-cards" target="_blank" rel="noopener">Card payments for crypto</a>
+            <span>Card payments for crypto</span>
             <span className="meta">developer</span>
           </li>
           <li>
-            <a href="https://portfolio.hardikmore.com/cpg-salesforce-dashboard-revamp" target="_blank" rel="noopener">FieldAssist dashboard revamp</a>
+            <span>FieldAssist dashboard revamp</span>
             <span className="meta">b2b</span>
           </li>
         </ul>

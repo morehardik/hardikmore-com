@@ -25,7 +25,12 @@ export async function generateMetadata({
       description: page.description,
       url: `https://hardikmore.com/work/${slug}`,
       type: "article",
-      images: [{ url: "/images/tails.webp" }],
+      images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve - building in the tails" }],
+    },
+    twitter: {
+      title: `${page.title} / Hardik More`,
+      description: page.description,
+      images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve - building in the tails" }],
     },
     alternates: { canonical: `https://hardikmore.com/work/${slug}` },
   };
@@ -59,6 +64,22 @@ export default async function CaseStudy({
       </section>
 
       <ReadingProgress />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: page.title,
+            datePublished: page.date,
+            dateModified: page.date,
+            author: { "@type": "Person", name: "Hardik More", url: "https://hardikmore.com" },
+            publisher: { "@type": "Person", name: "Hardik More", url: "https://hardikmore.com" },
+            url: `https://hardikmore.com/work/${slug}`,
+          }),
+        }}
+      />
 
       <div
         className="prose"

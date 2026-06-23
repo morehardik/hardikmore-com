@@ -5,7 +5,7 @@ import { getContentList } from "@/lib/markdown";
 export const metadata: Metadata = {
   title: "Writing",
   description:
-    "Writing by Hardik More on developer infrastructure, agentic AI, consumer products, and building in India.",
+    "Essays and notes by Hardik More on developer infrastructure, agentic AI, consumer fintech, and building in India. On BNPL, developer ecosystems, and more.",
   openGraph: {
     title: "Writing - Hardik More",
     description: "On developer infrastructure, agentic AI, consumer products, and building in India.",

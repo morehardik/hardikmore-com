@@ -5,10 +5,10 @@ import { getNowPage } from "@/lib/markdown";
 export const metadata: Metadata = {
   title: "Now",
   description:
-    "What Hardik More is focused on right now.",
+    "What Hardik More is currently focused on: building agentic AI infrastructure at Dhan, tracking Indian fintech, and early-stage investing. Updated regularly from Mumbai.",
   openGraph: {
     title: "Now / Hardik More",
-    description: "What Hardik More is focused on right now.",
+    description: "What Hardik More is currently focused on: building agentic AI infrastructure at Dhan, tracking Indian fintech, and early-stage investing.",
     url: "https://hardikmore.com/now",
     images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve - building in the tails" }],
   },

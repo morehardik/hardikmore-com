@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Hardik More is a product operator who turns new infrastructure into revenue lines. Background in developer APIs, agentic AI, and consumer products at Dhan.",
+    "Hardik More is a product operator who turns new infrastructure into revenue lines. Background in developer APIs, agentic AI, and consumer products. Currently at Dhan.",
   openGraph: {
     title: "About - Hardik More",
     description: "Product operator who turns new infrastructure into revenue lines. Developer APIs, agentic AI, consumer products at scale. Currently at Dhan.",

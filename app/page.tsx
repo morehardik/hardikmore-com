@@ -22,6 +22,25 @@ export default async function Home() {
   const works = await getContentList("work");
 
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Hardik More",
+            url: "https://hardikmore.com",
+            jobTitle: "Senior Product Manager",
+            worksFor: { "@type": "Organization", name: "Dhan" },
+            sameAs: [
+              "https://twitter.com/hardik__more",
+              "https://www.linkedin.com/in/hardikmore/",
+              "https://github.com/morehardik",
+            ],
+          }),
+        }}
+      />
     <main>
       <nav className="site-nav">
         <Link href="/about">About</Link>
@@ -171,5 +190,6 @@ export default async function Home() {
         </ul>
       </section>
     </main>
+    </>
   );
 }
