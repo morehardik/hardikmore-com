@@ -21,6 +21,7 @@ export async function generateMetadata({
   return {
     title: page.title,
     description: page.description,
+    robots: page.draft ? { index: false, follow: false } : undefined,
     openGraph: {
       title: `${page.title} / Hardik More`,
       description: page.description,

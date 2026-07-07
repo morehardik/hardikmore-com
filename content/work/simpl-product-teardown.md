@@ -1,6 +1,6 @@
 ---
 title: "Simpl: Product Teardown"
-date: 2022-06
+date: 2022-06-01
 tag: consumer
 description: "A product teardown of Simpl's activation gap: why 80% of onboarded users never make their first transaction, and a prioritised solution set to fix it."
 ---

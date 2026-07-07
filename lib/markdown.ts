@@ -18,6 +18,7 @@ export interface ContentMeta {
   description?: string;
   imageWidth?: string;
   externalUrl?: string;
+  draft?: boolean;
 }
 
 export interface ContentPage extends ContentMeta {
@@ -63,30 +64,35 @@ export async function getContentList(type: "work" | "writing"): Promise<ContentM
 
   const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
 
-  const items = files.map((filename) => {
-    const slug = filename.replace(/\.md$/, "");
-    const raw = fs.readFileSync(path.join(dir, filename), "utf8");
-    const { data } = matter(raw);
-    const dateRaw = toIsoDate(data.date);
-    return {
-      slug,
-      title: String(data.title ?? slug),
-      date: dateRaw,
-      dateDisplay: formatDate(dateRaw),
-      dateDisplayFull: formatDateFull(dateRaw),
-      tag: String(data.tag ?? ""),
-      section: String(data.section ?? data.tag ?? ""),
-      description: String(data.description ?? ""),
-      imageWidth: data.imageWidth ? String(data.imageWidth) : undefined,
-      externalUrl: data.externalUrl ? String(data.externalUrl) : undefined,
-    };
-  });
+  const items = files
+    .map((filename) => {
+      const slug = filename.replace(/\.md$/, "");
+      const raw = fs.readFileSync(path.join(dir, filename), "utf8");
+      const { data } = matter(raw);
+      const dateRaw = toIsoDate(data.date);
+      return {
+        slug,
+        title: String(data.title ?? slug),
+        date: dateRaw,
+        dateDisplay: formatDate(dateRaw),
+        dateDisplayFull: formatDateFull(dateRaw),
+        tag: String(data.tag ?? ""),
+        section: String(data.section ?? data.tag ?? ""),
+        description: String(data.description ?? ""),
+        imageWidth: data.imageWidth ? String(data.imageWidth) : undefined,
+        externalUrl: data.externalUrl ? String(data.externalUrl) : undefined,
+        draft: data.draft === true,
+      };
+    })
+    // Drafts are hidden from list pages, generateStaticParams, and the sitemap.
+    .filter((item) => !item.draft);
 
   return items.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
 export async function getNowPage(): Promise<{ contentHtml: string; updated: string; location: string } | null> {
-  const filePath = path.join(contentDir, "now.md");
+  // Keystatic writes the `now` singleton to content/now/index.md (singleton path + contentField).
+  const filePath = path.join(contentDir, "now", "index.md");
   if (!fs.existsSync(filePath)) return null;
 
   const raw = fs.readFileSync(filePath, "utf8");
@@ -129,6 +135,7 @@ export async function getContentPage(
     description: String(data.description ?? ""),
     imageWidth: data.imageWidth ? String(data.imageWidth) : undefined,
     externalUrl: data.externalUrl ? String(data.externalUrl) : undefined,
+    draft: data.draft === true,
     contentHtml: processed.toString(),
   };
 }
