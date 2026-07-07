@@ -1,6 +1,6 @@
 ---
 title: "ScanX: equity research at scale"
-date: 2023-06
+date: 2023-06-01
 tag: consumer
 description: 0-to-1 consumer research platform, 2.5M+ monthly visits, top-5 Indian equity research tool.
 ---
