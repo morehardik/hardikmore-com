@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getContentPage, getContentList } from "@/lib/markdown";
+import { getContentPage, getContentList, shareImage } from "@/lib/markdown";
 import PostFooter from "@/app/components/PostFooter";
 import ReadingProgress from "@/app/components/ReadingProgress";
 
@@ -18,6 +19,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const page = await getContentPage("writing", slug);
   if (!page) return {};
+  const image = shareImage(page);
   return {
     title: page.title,
     description: page.description,
@@ -27,12 +29,12 @@ export async function generateMetadata({
       description: page.description,
       url: `https://hardikmore.com/writing/${slug}`,
       type: "article",
-      images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve - building in the tails" }],
+      images: [image],
     },
     twitter: {
       title: `${page.title} / Hardik More`,
       description: page.description,
-      images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve - building in the tails" }],
+      images: [image],
     },
     alternates: { canonical: `https://hardikmore.com/writing/${slug}` },
   };
@@ -56,7 +58,6 @@ export default async function Post({
         <Link href="/about">About</Link>
         <Link href="/work">Work</Link>
         <Link href="/now">Now</Link>
-        <a href="/#elsewhere">Contact</a>
       </nav>
 
       <section className="identity">
@@ -66,6 +67,18 @@ export default async function Post({
           {page.tag ? ` · ${page.tag}` : ""}
         </p>
       </section>
+
+      {page.cover ? (
+        <figure className="post-cover">
+          <Image
+            src={page.cover}
+            alt={page.coverAlt || page.title}
+            width={1200}
+            height={630}
+            priority
+          />
+        </figure>
+      ) : null}
 
       <ReadingProgress />
 
@@ -78,6 +91,7 @@ export default async function Post({
             headline: page.title,
             datePublished: page.date,
             dateModified: page.date,
+            image: page.cover ? [`https://hardikmore.com${page.cover}`] : undefined,
             author: { "@type": "Person", name: "Hardik More", url: "https://hardikmore.com" },
             publisher: { "@type": "Person", name: "Hardik More", url: "https://hardikmore.com" },
             url: `https://hardikmore.com/writing/${slug}`,

@@ -4,10 +4,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Hardik More is a product operator who turns new infrastructure into revenue lines. Background in developer APIs, agentic AI, and consumer products. Currently at Dhan.",
+    "Hardik More is a product operator who turns new infrastructure into revenue lines. Background in developer APIs, agentic AI, and consumer products. Previously at Dhan.",
   openGraph: {
     title: "About - Hardik More",
-    description: "Product operator who turns new infrastructure into revenue lines. Developer APIs, agentic AI, consumer products at scale. Currently at Dhan.",
+    description: "Product operator who turns new infrastructure into revenue lines. Developer APIs, agentic AI, consumer products at scale. Previously at Dhan.",
     url: "https://hardikmore.com/about",
     images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve - building in the tails" }],
   },
@@ -23,7 +23,6 @@ export default function About() {
         <Link href="/work">Work</Link>
         <Link href="/writing">Writing</Link>
         <Link href="/now">Now</Link>
-        <a href="/#elsewhere">Contact</a>
       </nav>
 
       <section className="identity">
@@ -33,13 +32,18 @@ export default function About() {
 
       <section className="intro">
         <p>
-          I&apos;m a product operator. Currently Senior PM at{" "}
+          I&apos;m a product operator. Until July 2026 I was Senior PM at{" "}
           <a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a>,
-          where I build developer and consumer products - DhanHQ APIs (0→Rs 10Cr ARR),
+          where I built developer and consumer products - DhanHQ APIs (0→Rs 10Cr ARR),
           a charts and trading platform that grew to one-third of Dhan&apos;s revenue,
           ScanX (2.5M+ monthly visits), and agentic trading infrastructure including
-          India&apos;s first live MCP server for a broker. I also source and co-build
+          India&apos;s first live MCP server for a broker. I also sourced and co-built
           early-stage bets as strategic investments.
+        </p>
+        <p>
+          I&apos;ve since moved on from Dhan. Right now I&apos;m reading, researching,
+          and writing - building theses toward the next bet. The{" "}
+          <Link href="/now">/now page</Link> tracks where that stands.
         </p>
         <p>
           I studied Economics at S.G.T.B. Khalsa College, University of Delhi. Commerce
@@ -101,7 +105,7 @@ export default function About() {
             <tr>
               <td className="exp-role">Senior PM</td>
               <td className="exp-company"><a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a></td>
-              <td className="exp-year">2022 – present</td>
+              <td className="exp-year">2022 – 2026</td>
             </tr>
             <tr>
               <td className="exp-role">Product Intern</td>
@@ -120,16 +124,6 @@ export default function About() {
             </tr>
           </tbody>
         </table>
-      </section>
-
-      <section className="section">
-        <h2>Elsewhere</h2>
-        <ul className="inline-list">
-          <li><a href="https://twitter.com/hardik__more" target="_blank" rel="noopener">Twitter</a></li>
-          <li><a href="https://www.linkedin.com/in/hardikmore/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/morehardik" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="mailto:hello@hardikmore.com">hello@hardikmore.com</a></li>
-        </ul>
       </section>
     </main>
   );

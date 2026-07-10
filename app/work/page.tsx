@@ -26,7 +26,6 @@ export default async function Work() {
         <Link href="/work" aria-current="page">Work</Link>
         <Link href="/writing">Writing</Link>
         <Link href="/now">Now</Link>
-        <a href="/#elsewhere">Contact</a>
       </nav>
 
       <section className="identity">
@@ -35,7 +34,7 @@ export default async function Work() {
       </section>
 
       <section className="section">
-        <h2>Dhan - 2022 to present</h2>
+        <h2>Dhan - 2022 to 2026</h2>
         <ul>
           {caseStudies.filter((i) => i.slug !== "simpl-product-teardown").length > 0 ? (
             caseStudies.filter((i) => i.slug !== "simpl-product-teardown").map((item) => (

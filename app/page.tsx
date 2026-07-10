@@ -6,11 +6,11 @@ import { getContentList } from "@/lib/markdown";
 export const metadata: Metadata = {
   title: "Hardik More - building in the tails.",
   description:
-    "Hardik More builds on new infrastructure before the category has a name. Developer APIs, agentic AI, consumer products at scale. Currently at Dhan.",
+    "Hardik More builds on new infrastructure before the category has a name. Developer APIs, agentic AI, consumer products at scale. Previously at Dhan.",
   openGraph: {
     title: "Hardik More - building in the tails.",
     description:
-      "Building on new infrastructure before the category has a name. Developer APIs, agentic AI, consumer products. Currently at Dhan.",
+      "Building on new infrastructure before the category has a name. Developer APIs, agentic AI, consumer products. Previously at Dhan.",
     url: "https://hardikmore.com",
     images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve - building in the tails" }],
   },
@@ -31,8 +31,7 @@ export default async function Home() {
             "@type": "Person",
             name: "Hardik More",
             url: "https://hardikmore.com",
-            jobTitle: "Senior Product Manager",
-            worksFor: { "@type": "Organization", name: "Dhan" },
+            jobTitle: "Product Operator",
             sameAs: [
               "https://twitter.com/hardik__more",
               "https://www.linkedin.com/in/hardikmore/",
@@ -47,7 +46,6 @@ export default async function Home() {
         <Link href="/work">Work</Link>
         <Link href="/writing">Writing</Link>
         <Link href="/now">Now</Link>
-        <a href="#elsewhere">Contact</a>
       </nav>
 
       <section className="identity">
@@ -71,11 +69,15 @@ export default async function Home() {
           developer APIs, agentic AI, consumer products at scale.
         </p>
         <p>
-          Currently at <a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a>,
-          where I&apos;ve built from 0-to-1 across APIs (Rs 10Cr ARR), a charts and trading
+          Previously at <a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a>,
+          where I built from 0-to-1 across APIs (Rs 10Cr ARR), a charts and trading
           platform (one-third of Dhan&apos;s revenue), ScanX (2.5M+ monthly visits), and
-          agentic trading infra (MCP server, live). I also source and co-build early-stage
+          agentic trading infra (MCP server, live). I also sourced and co-built early-stage
           bets as strategic investments.
+        </p>
+        <p>
+          Right now I&apos;m reading, researching, and writing my way to the next
+          bet - see <Link href="/now">what I&apos;m doing now</Link>.
         </p>
       </section>
 
@@ -159,7 +161,7 @@ export default async function Home() {
             <tr>
               <td className="exp-role">Senior PM</td>
               <td className="exp-company"><a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a></td>
-              <td className="exp-year">2022 – present</td>
+              <td className="exp-year">2022 – 2026</td>
             </tr>
             <tr>
               <td className="exp-role">Product Intern</td>
@@ -178,16 +180,6 @@ export default async function Home() {
             </tr>
           </tbody>
         </table>
-      </section>
-
-      <section className="section" id="elsewhere">
-        <h2>Elsewhere</h2>
-        <ul className="inline-list">
-          <li><a href="https://twitter.com/hardik__more" target="_blank" rel="noopener">Twitter</a></li>
-          <li><a href="https://www.linkedin.com/in/hardikmore/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/morehardik" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="mailto:hello@hardikmore.com">hello@hardikmore.com</a></li>
-        </ul>
       </section>
     </main>
     </>

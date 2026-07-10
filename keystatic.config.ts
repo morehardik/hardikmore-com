@@ -12,6 +12,10 @@ const tagOptions = [
 // Optional frontmatter keys that lib/markdown.ts reads. Modeled here so Keystatic
 // preserves them on save instead of dropping unknown keys.
 const optionalMeta = {
+  // Cover image path, e.g. /images/writing/<slug>/cover.png.
+  // Doubles as og:image / twitter:image; falls back to /images/tails.webp when empty.
+  cover: fields.text({ label: "Cover image path", validation: { isRequired: false } }),
+  coverAlt: fields.text({ label: "Cover image alt text", validation: { isRequired: false } }),
   section: fields.text({ label: "Section", validation: { isRequired: false } }),
   imageWidth: fields.text({ label: "Image width", validation: { isRequired: false } }),
   externalUrl: fields.text({ label: "External URL", validation: { isRequired: false } }),

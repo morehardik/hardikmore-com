@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import SiteFooter from "./components/SiteFooter";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s / Hardik More",
   },
   description:
-    "Hardik More builds on new infrastructure before the category has a name. Developer APIs, agentic AI, consumer products at scale. Currently at Dhan.",
+    "Hardik More builds on new infrastructure before the category has a name. Developer APIs, agentic AI, consumer products at scale. Previously at Dhan.",
   authors: [{ name: "Hardik More" }],
   metadataBase: new URL("https://hardikmore.com"),
   openGraph: {
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        <SiteFooter />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-8VDTTGDYQZ"
           strategy="afterInteractive"
