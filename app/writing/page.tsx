@@ -28,7 +28,6 @@ export default async function Writing() {
         <Link href="/work">Work</Link>
         <Link href="/writing" aria-current="page">Writing</Link>
         <Link href="/now">Now</Link>
-        <a href="/#elsewhere">Contact</a>
       </nav>
 
       <section className="identity">

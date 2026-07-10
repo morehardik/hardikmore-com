@@ -5,10 +5,10 @@ import { getNowPage } from "@/lib/markdown";
 export const metadata: Metadata = {
   title: "Now",
   description:
-    "What Hardik More is currently focused on: building agentic AI infrastructure at Dhan, tracking Indian fintech, and early-stage investing. Updated regularly from Mumbai.",
+    "What Hardik More is currently focused on: reading and researching the next bet, writing essays and building theses on agentic AI. Updated from Mumbai.",
   openGraph: {
     title: "Now / Hardik More",
-    description: "What Hardik More is currently focused on: building agentic AI infrastructure at Dhan, tracking Indian fintech, and early-stage investing.",
+    description: "What Hardik More is currently focused on: reading and researching the next bet, writing essays and building theses on agentic AI.",
     url: "https://hardikmore.com/now",
     images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve - building in the tails" }],
   },
@@ -28,7 +28,6 @@ export default async function Now() {
         <Link href="/work">Work</Link>
         <Link href="/writing">Writing</Link>
         <Link href="/now" aria-current="page">Now</Link>
-        <a href="/#elsewhere">Contact</a>
       </nav>
 
       <section className="identity">

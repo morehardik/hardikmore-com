@@ -7,6 +7,10 @@ import html from "remark-html";
 
 const contentDir = path.join(process.cwd(), "content");
 
+export const DEFAULT_SHARE_IMAGE = "/images/tails.webp";
+export const DEFAULT_SHARE_IMAGE_ALT =
+  "A long-tail probability distribution curve - building in the tails";
+
 export interface ContentMeta {
   slug: string;
   title: string;
@@ -19,10 +23,26 @@ export interface ContentMeta {
   imageWidth?: string;
   externalUrl?: string;
   draft?: boolean;
+  cover?: string;
+  coverAlt?: string;
+}
+
+/** og:image / twitter:image for a page — its cover, else the tails brand image. */
+export function shareImage(page: Pick<ContentMeta, "cover" | "coverAlt" | "title">) {
+  if (!page.cover) return { url: DEFAULT_SHARE_IMAGE, alt: DEFAULT_SHARE_IMAGE_ALT };
+  return { url: page.cover, alt: page.coverAlt || page.title };
 }
 
 export interface ContentPage extends ContentMeta {
   contentHtml: string;
+}
+
+/** External links in rendered markdown open in a new tab; internal (/, #, mailto:) stay in-tab. */
+function externalizeLinks(htmlStr: string): string {
+  return htmlStr.replace(
+    /<a href="(https?:\/\/[^"]*)"/g,
+    '<a href="$1" target="_blank" rel="noopener"'
+  );
 }
 
 function toIsoDate(raw: unknown): string {
@@ -82,6 +102,8 @@ export async function getContentList(type: "work" | "writing"): Promise<ContentM
         imageWidth: data.imageWidth ? String(data.imageWidth) : undefined,
         externalUrl: data.externalUrl ? String(data.externalUrl) : undefined,
         draft: data.draft === true,
+        cover: data.cover ? String(data.cover) : undefined,
+        coverAlt: data.coverAlt ? String(data.coverAlt) : undefined,
       };
     })
     // Drafts are hidden from list pages, generateStaticParams, and the sitemap.
@@ -103,8 +125,8 @@ export async function getNowPage(): Promise<{ contentHtml: string; updated: stri
     .process(content);
 
   return {
-    contentHtml: processed.toString(),
-    updated: String(data.updated ?? ""),
+    contentHtml: externalizeLinks(processed.toString()),
+    updated: formatDateFull(toIsoDate(data.updated)),
     location: String(data.location ?? ""),
   };
 }
@@ -136,6 +158,8 @@ export async function getContentPage(
     imageWidth: data.imageWidth ? String(data.imageWidth) : undefined,
     externalUrl: data.externalUrl ? String(data.externalUrl) : undefined,
     draft: data.draft === true,
-    contentHtml: processed.toString(),
+    cover: data.cover ? String(data.cover) : undefined,
+    coverAlt: data.coverAlt ? String(data.coverAlt) : undefined,
+    contentHtml: externalizeLinks(processed.toString()),
   };
 }
