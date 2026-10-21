@@ -1,6 +1,6 @@
 # hardikmore.com
 
-Personal site of Hardik More — operator turned investor, Associate at Sorin Investments.
+Personal site of Hardik More — operator turned investor, on the investment team at Sorin Investments.
 
 Live at [hardikmore.com](https://hardikmore.com).
 

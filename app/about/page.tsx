@@ -32,7 +32,7 @@ export default function About() {
 
       <section className="intro">
         <p>
-          I&apos;m an operator turned investor. I&apos;m an Associate at{" "}
+          I&apos;m an operator turned investor, on the investment team at{" "}
           <a href="https://www.sorininvestments.com/team/hardik-more" target="_blank" rel="noopener">Sorin Investments</a>,
           backing founders early. I like bold ideas that redefine a segment, and I try to
           bring a builder&apos;s empathy to the people doing the hard, early work of
@@ -118,9 +118,9 @@ export default function About() {
         <table className="exp-table">
           <tbody>
             <tr>
-              <td className="exp-role">Associate</td>
+              <td className="exp-role">Investment Team</td>
               <td className="exp-company"><a href="https://www.sorininvestments.com/" target="_blank" rel="noopener">Sorin Investments</a></td>
-              <td className="exp-year">2026 –</td>
+              <td className="exp-year">2026 – present</td>
             </tr>
             <tr>
               <td className="exp-role">Senior PM</td>

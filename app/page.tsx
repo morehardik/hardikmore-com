@@ -31,7 +31,7 @@ export default async function Home() {
             "@type": "Person",
             name: "Hardik More",
             url: "https://hardikmore.com",
-            jobTitle: "Associate",
+            jobTitle: "Investment Team",
             worksFor: {
               "@type": "Organization",
               name: "Sorin Investments",
@@ -167,9 +167,9 @@ export default async function Home() {
         <table className="exp-table">
           <tbody>
             <tr>
-              <td className="exp-role">Associate</td>
+              <td className="exp-role">Investment Team</td>
               <td className="exp-company"><a href="https://www.sorininvestments.com/" target="_blank" rel="noopener">Sorin Investments</a></td>
-              <td className="exp-year">2026 –</td>
+              <td className="exp-year">2026 – present</td>
             </tr>
             <tr>
               <td className="exp-role">Senior PM</td>
