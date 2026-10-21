@@ -40,7 +40,7 @@ export default function About() {
         </p>
         <p>
           Before Sorin, I spent four years at{" "}
-          <a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a> as one of its
+          <a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a>&nbsp;as one of its
           early PMs, building developer and consumer products - DhanHQ APIs (0→Rs 10Cr ARR),
           a charts and trading platform that grew to one-third of Dhan&apos;s revenue,
           ScanX (2.5M+ monthly visits), and agentic trading infrastructure including
