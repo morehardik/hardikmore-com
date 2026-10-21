@@ -1,6 +1,6 @@
 # hardikmore.com
 
-Personal site of Hardik More — product operator, currently Senior PM at Dhan.
+Personal site of Hardik More — operator turned investor, Associate at Sorin Investments.
 
 Live at [hardikmore.com](https://hardikmore.com).
 

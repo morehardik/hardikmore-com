@@ -1,18 +1,21 @@
 ---
-updated: 2026-07-09
+updated: 2026-10-21
 location: Mumbai
 ---
 
-I recently left [Dhan](https://dhan.co/) after four years of building developer APIs, trading platforms, and agentic infrastructure. Right now I am between bets, and deliberately so.
+I've joined the investment team at [Sorin Investments](https://www.sorininvestments.com/). Four years of building at [Dhan](https://dhan.co/) taught me how products get made in one industry. Sorin is the second leg of that learning: understanding many more, through the founders building them.
 
 ## Working on
 
-- **Researching the next bet** — reading widely, mapping where new infrastructure is forming, and pressure-testing ideas before committing to one
-- **Writing actively** — essays and working theses; [An Operator's Dilemma](/writing/an-operators-dilemma) is the first in a line of thinking about where interfaces go in an agentic world
-- **Building theses** — on agentic AI, interfaces, and what the application layer looks like when anyone can build
+- **Learning the other side of the table** — meeting founders, writing up companies, and building conviction one area at a time
+- **Backing bold ideas** — early, often before the category has a name
+- **Writing** — essays and working theses; [An Operator's Dilemma](/writing/an-operators-dilemma) is the first in a line of thinking about where interfaces go in an agentic world
 
 ## Thinking about
 
+- How interfaces get rediscovered as technology changes what people can build, how customers discover it, and what they expect from it
+- Where value pools in every chain, and how agents redraw it
 - Whether the world converges to one chat window or a thousand hyper-personalised interfaces
 - What the right primitives are for agentic commerce
-- Long-tail bets that look small until they compound — same thesis, new domains
+
+If you're building something, or figuring out what comes next, I'd love to exchange notes: hello@hardikmore.com

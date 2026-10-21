@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s / Hardik More",
   },
   description:
-    "Hardik More builds on new infrastructure before the category has a name. Developer APIs, agentic AI, consumer products at scale. Previously at Dhan.",
+    "Hardik More is an operator turned investor at Sorin Investments, backing bold ideas early. Previously built developer APIs, trading platforms and agentic infrastructure at Dhan.",
   authors: [{ name: "Hardik More" }],
   metadataBase: new URL("https://hardikmore.com"),
   openGraph: {

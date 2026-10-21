@@ -4,10 +4,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Hardik More is a product operator who turns new infrastructure into revenue lines. Background in developer APIs, agentic AI, and consumer products. Previously at Dhan.",
+    "Hardik More is an operator turned investor at Sorin Investments, backing bold ideas early. Four years building developer APIs, trading platforms and agentic infrastructure at Dhan.",
   openGraph: {
     title: "About - Hardik More",
-    description: "Product operator who turns new infrastructure into revenue lines. Developer APIs, agentic AI, consumer products at scale. Previously at Dhan.",
+    description: "Operator turned investor at Sorin Investments, backing bold ideas early. Four years building developer APIs, trading platforms and agentic infrastructure at Dhan.",
     url: "https://hardikmore.com/about",
     images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve - building in the tails" }],
   },
@@ -32,21 +32,26 @@ export default function About() {
 
       <section className="intro">
         <p>
-          I&apos;m a product operator. Until July 2026 I was Senior PM at{" "}
-          <a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a>,
-          where I built developer and consumer products - DhanHQ APIs (0→Rs 10Cr ARR),
+          I&apos;m an operator turned investor. I&apos;m an Associate at{" "}
+          <a href="https://www.sorininvestments.com/team/hardik-more" target="_blank" rel="noopener">Sorin Investments</a>,
+          backing founders early. I like bold ideas that redefine a segment, and I try to
+          bring a builder&apos;s empathy to the people doing the hard, early work of
+          turning them into businesses.
+        </p>
+        <p>
+          Before Sorin, I spent four years at{" "}
+          <a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a> as one of its
+          early PMs, building developer and consumer products - DhanHQ APIs (0→Rs 10Cr ARR),
           a charts and trading platform that grew to one-third of Dhan&apos;s revenue,
           ScanX (2.5M+ monthly visits), and agentic trading infrastructure including
-          India&apos;s first live MCP server for a broker. I also sourced and co-built
-          early-stage bets as strategic investments.
+          India&apos;s first live MCP server for a broker. I built Dhan&apos;s algo trading
+          product too, defining the category while its regulation was still taking shape.
+          And I sourced and co-built early-stage bets as strategic investments. That turned
+          out to be my favourite part of the job. The <Link href="/now">/now page</Link>{" "}
+          tracks what I&apos;m on today.
         </p>
         <p>
-          I&apos;ve since moved on from Dhan. Right now I&apos;m reading, researching,
-          and writing - building theses toward the next bet. The{" "}
-          <Link href="/now">/now page</Link> tracks where that stands.
-        </p>
-        <p>
-          I studied Economics at S.G.T.B. Khalsa College, University of Delhi. Commerce
+          I grew up in Guwahati, Assam, and studied Economics at S.G.T.B. Khalsa College, University of Delhi. Commerce
           background led me to macro and finance. First interest was investment banking,
           that changed fast once I saw how technology was reshaping what finance could do.
         </p>
@@ -82,7 +87,15 @@ export default function About() {
               verticals from the ground up in an industry where being late usually means
               losing. That constraint is where I operate best. Being curious about both
               tech and finance is an edge when the two keep colliding in ways nobody has a
-              playbook for yet - agentic AI in trading being the current version of that.
+              playbook for yet - agentic AI in trading was the latest version of that.
+            </p>
+            <p>
+              Working deeply in one industry made me curious about many others. Sorin is
+              the second leg of that learning. Technology is changing what people can build,
+              how customers find it and what they expect from it - interfaces are being
+              rediscovered, and value is moving along every chain. I want to understand that
+              through the founders and operators living it every day, and build my own
+              conviction one area at a time.
             </p>
           </div>
         </details>
@@ -91,10 +104,12 @@ export default function About() {
       <section className="section">
         <h2>How I think</h2>
         <ul>
-          <li><span>Operators build. Managers coordinate. I prefer building.</span></li>
+          <li><span>Building is the best preparation for backing builders. You know which problems are hard because you&apos;ve had them.</span></li>
           <li><span>Tail bets compound. Most obvious things are already priced in.</span></li>
+          <li><span>Every chain has a link where value pools. Finding it early is most of the job.</span></li>
           <li><span>Developer infrastructure is always a decade ahead of consumer awareness.</span></li>
           <li><span>Revenue is a forcing function. It removes ambiguity about whether something works.</span></li>
+          <li><span>Conviction is earned one area at a time. I&apos;d rather go deep than be broadly opinionated.</span></li>
         </ul>
       </section>
 
@@ -102,6 +117,11 @@ export default function About() {
         <h2>Experience</h2>
         <table className="exp-table">
           <tbody>
+            <tr>
+              <td className="exp-role">Associate</td>
+              <td className="exp-company"><a href="https://www.sorininvestments.com/" target="_blank" rel="noopener">Sorin Investments</a></td>
+              <td className="exp-year">2026 –</td>
+            </tr>
             <tr>
               <td className="exp-role">Senior PM</td>
               <td className="exp-company"><a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a></td>

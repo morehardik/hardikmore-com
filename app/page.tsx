@@ -6,11 +6,11 @@ import { getContentList } from "@/lib/markdown";
 export const metadata: Metadata = {
   title: "Hardik More - building in the tails.",
   description:
-    "Hardik More builds on new infrastructure before the category has a name. Developer APIs, agentic AI, consumer products at scale. Previously at Dhan.",
+    "Hardik More is an operator turned investor at Sorin Investments, backing bold ideas early. Previously built developer APIs, trading platforms and agentic infrastructure at Dhan.",
   openGraph: {
     title: "Hardik More - building in the tails.",
     description:
-      "Building on new infrastructure before the category has a name. Developer APIs, agentic AI, consumer products. Previously at Dhan.",
+      "Operator turned investor at Sorin Investments, backing bold ideas early. Previously built developer APIs, trading platforms and agentic infrastructure at Dhan.",
     url: "https://hardikmore.com",
     images: [{ url: "/images/tails.webp", alt: "A long-tail probability distribution curve - building in the tails" }],
   },
@@ -31,7 +31,12 @@ export default async function Home() {
             "@type": "Person",
             name: "Hardik More",
             url: "https://hardikmore.com",
-            jobTitle: "Product Operator",
+            jobTitle: "Associate",
+            worksFor: {
+              "@type": "Organization",
+              name: "Sorin Investments",
+              url: "https://www.sorininvestments.com",
+            },
             sameAs: [
               "https://twitter.com/hardik__more",
               "https://www.linkedin.com/in/hardikmore/",
@@ -50,7 +55,7 @@ export default async function Home() {
 
       <section className="identity">
         <h1 className="identity-name">Hardik More</h1>
-        <p className="identity-tag">Operator.</p>
+        <p className="identity-tag">Operator turned investor.</p>
       </section>
 
       <figure className="hero">
@@ -65,19 +70,22 @@ export default async function Home() {
 
       <section className="intro">
         <p>
-          I turn new infrastructure into revenue lines:
-          developer APIs, agentic AI, consumer products at scale.
+          I&apos;m on the investment team at{" "}
+          <a href="https://www.sorininvestments.com/team/hardik-more" target="_blank" rel="noopener">Sorin Investments</a>,
+          backing founders doing the hard, early work of turning bold ideas into
+          businesses. I look for interfaces being rediscovered, and for where value
+          pools in every chain - from the infrastructure underneath to the customer on top.
         </p>
         <p>
-          Previously at <a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a>,
+          Before this, four years at <a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a>,
           where I built from 0-to-1 across APIs (Rs 10Cr ARR), a charts and trading
           platform (one-third of Dhan&apos;s revenue), ScanX (2.5M+ monthly visits), and
           agentic trading infra (MCP server, live). I also sourced and co-built early-stage
-          bets as strategic investments.
+          bets as strategic investments - the part of the job that pulled me here.
         </p>
         <p>
-          Right now I&apos;m reading, researching, and writing my way to the next
-          bet - see <Link href="/now">what I&apos;m doing now</Link>.
+          If you&apos;re building something, or figuring out what comes next, I&apos;d love
+          to exchange notes. Here&apos;s <Link href="/now">what I&apos;m doing now</Link>.
         </p>
       </section>
 
@@ -158,6 +166,11 @@ export default async function Home() {
         <h2>Experience</h2>
         <table className="exp-table">
           <tbody>
+            <tr>
+              <td className="exp-role">Associate</td>
+              <td className="exp-company"><a href="https://www.sorininvestments.com/" target="_blank" rel="noopener">Sorin Investments</a></td>
+              <td className="exp-year">2026 –</td>
+            </tr>
             <tr>
               <td className="exp-role">Senior PM</td>
               <td className="exp-company"><a href="https://dhan.co/" target="_blank" rel="noopener">Dhan</a></td>
